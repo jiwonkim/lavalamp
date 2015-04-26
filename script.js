@@ -1,20 +1,34 @@
 $(document).ready(function() {
-    var canvas = document.getElementById('lavalamp-canvas');
-    var context = canvas.getContext('2d');
-    context.translate(0.5, 0.5);
-
+    var description = $('#description');
+    var descriptionVisible = true;
+    $('#description-toggle').click(function() {
+        if (descriptionVisible) {
+            $(this).text('?').css('top', '10px');
+            description.css('left', -(description.width() + 10));
+            descriptionVisible = false;
+        } else {
+            $(this).html('&times;').css('top', '0');
+            description.css('left', 0);
+            descriptionVisible = true;
+        }
+    });
     $.getJSON('schemes.json', function(schemes) {
-        initLavalamp(canvas, context, schemes);
+        initLavalamp(schemes);
     });
 });
 
-function initLavalamp(canvas, context, schemes) {
+function initLavalamp(schemes) {
+    $('#description h1').text(schemes[0].title);
+
     var dt = 0.1;
+    var canvas = document.getElementById('lavalamp-canvas');
+    var context = canvas.getContext('2d');
     var lamp = lavalamp(canvas, context, schemes);
     requestAnimationFrame(frame);
 
-    $('body').click(function() {
-        lamp.toggleScheme();
+    $('#glass-jar').click(function() {
+        var schemeName = lamp.toggleScheme();
+        $('#description h1').text(schemeName);
     });
 
     function frame() {
@@ -28,15 +42,6 @@ function lavalamp(canvas, context, schemes) {
 
     // CONSTANTS
     var SUM_MULTIPLIER = 200;
-    var DEFAULT_SCHEME = {
-        bgcolor: '#333',
-        colorStops: [
-            {force: 1.89, color: {r: 0, g: 0, b: 0, a: 0}},
-            {force: 2.1, color: {r: 93, g: 191, b: 140, a: 255}},
-            {force: 3, color: {r: 190, g: 214, b: 140, a: 255}},
-            {force: 5, color: {r: 240, g: 140, b: 110, a: 255}},
-        ]
-    };
 
     // canvas width and height
     var w = canvas.width;
@@ -65,6 +70,7 @@ function lavalamp(canvas, context, schemes) {
     function toggleScheme() {
         schemeIdx = (schemeIdx + 1) % schemes.length;
         $('#lavalamp-canvas').css('background', schemes[schemeIdx].background);
+        return schemes[schemeIdx].title;
     }
 
     function update(dt) {

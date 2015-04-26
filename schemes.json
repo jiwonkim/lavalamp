@@ -1,6 +1,6 @@
 [
     {
-        "title": "Title",
+        "title": "Rainbow Dreams",
         "background": "#222",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Ameoba",
         "background": "#ddd",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Mad Scientist",
         "background": "#333",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Lava",
         "background": "linear-gradient(#333, #000)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -43,7 +43,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Playdough",
         "background": "#333",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Grandma",
         "background": "linear-gradient(#DAE2F8, #D6A4A4)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -61,7 +61,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Dusk",
         "background": "linear-gradient(#403B4A, #E7E9BB)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -72,7 +72,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Glowworms",
         "background": "linear-gradient(#5f2c82, #49a09d)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -82,7 +82,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Princess",
         "background": "linear-gradient(#ED4264, #FFEDBC)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
@@ -91,7 +91,7 @@
         ]
     },
     {
-        "title": "Title",
+        "title": "Lab Geek",
         "background": "linear-gradient(#AAFFA9, #11FFBD)",
         "colorStops": [
             {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
