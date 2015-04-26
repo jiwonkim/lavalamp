@@ -26,6 +26,8 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
         blob(0.8, 0.05),
         blob(0.7, 0.06),
         blob(0.2, 0.05),
+        blob(0.5, 0.12),
+        blob(0.35, 0.04),
     ];
 
 
