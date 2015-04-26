@@ -1,0 +1,103 @@
+[
+    {
+        "title": "Title",
+        "background": "#222",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2.1, "color": {"r": 93, "g": 191, "b": 140, "a": 255}},
+            {"force": 3, "color": {"r": 190, "g": 214, "b": 140, "a": 255}},
+            {"force": 5, "color": {"r": 240, "g": 140, "b": 110, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "#ddd",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2, "color": {"r": 10, "g": 191, "b": 188, "a": 50}},
+            {"force": 2.5, "color": {"r": 10, "g": 191, "b": 188, "a": 100}},
+            {"force": 3, "color": {"r": 100, "g": 100, "b": 130, "a": 200}},
+            {"force": 4.2, "color": {"r": 200, "g": 75, "b": 100, "a": 255}},
+            {"force": 4.6, "color": {"r": 252, "g": 53, "b": 76, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "#333",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 1.9, "color": {"r": 150, "g": 50, "b": 150, "a": 100}},
+            {"force": 2.3, "color": {"r": 200, "g": 50, "b": 200, "a": 150}},
+            {"force": 2.9, "color": {"r": 100, "g": 150, "b": 255, "a": 200}},
+            {"force": 3, "color": {"r": 0, "g": 255, "b": 255, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#333, #000)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2, "color": {"r": 255, "g": 255, "b": 0, "a": 100}},
+            {"force": 2.3, "color": {"r": 255, "g": 180, "b": 0, "a": 200}},
+            {"force": 3, "color": {"r": 255, "g": 10, "b": 0, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "#333",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2, "color": {"r": 200, "g": 0, "b": 255, "a": 200}},
+            {"force": 3, "color": {"r": 200, "g": 0, "b": 255, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#DAE2F8, #D6A4A4)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2, "color": {"r": 205, "g": 137, "b": 153, "a": 255}},
+            {"force": 3, "color": {"r": 239, "g": 230, "b": 187, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#403B4A, #E7E9BB)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2, "color": {"r": 222, "g": 68, "b": 68, "a": 200}},
+            {"force": 2.2, "color": {"r": 222, "g": 68, "b": 68, "a": 255}},
+            {"force": 2.9, "color": {"r": 240, "g": 120, "b": 100, "a": 255}},
+            {"force": 3, "color": {"r": 255, "g": 184, "b": 140, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#5f2c82, #49a09d)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2.2, "color": {"r": 245, "g": 246, "b": 193, "a": 150}},
+            {"force": 5, "color": {"r": 253, "g": 255, "b": 123, "a": 200}},
+            {"force": 10, "color": {"r": 253, "g": 255, "b": 200, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#ED4264, #FFEDBC)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2.2, "color": {"r": 250, "g": 250, "b": 250, "a": 150}},
+            {"force": 3, "color": {"r": 250, "g": 250, "b": 220, "a": 255}}
+        ]
+    },
+    {
+        "title": "Title",
+        "background": "linear-gradient(#AAFFA9, #11FFBD)",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2.2, "color": {"r": 0, "g": 0, "b": 0, "a": 150}},
+            {"force": 3, "color": {"r": 30, "g": 30, "b": 30, "a": 150}},
+            {"force": 1000, "color": {"r": 30, "g": 30, "b": 30, "a": 255}}
+        ]
+    }
+]
