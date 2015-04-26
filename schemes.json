@@ -143,5 +143,24 @@
             {"force": 3.5, "color": {"r": 255, "g": 209, "b": 148, "a": 255}},
             {"force": 4, "color": {"r": 255, "g": 220, "b": 170, "a": 255}}
         ]
+    },
+    {
+        "title": "Creamy Pistachio",
+        "background": "linear-gradient(#FFEEEE, #DDEFBB)",
+        "colorStops": [
+            {"force": 1.9, "color": {"r": 100, "g": 99, "b": 60, "a": 0}},
+            {"force": 1.925, "color": {"r": 232, "g": 233, "b": 187, "a": 100}},
+            {"force": 2, "color": {"r": 232, "g": 233, "b": 187, "a": 255}},
+            {"force": 4, "color": {"r": 113, "g": 178, "b": 128, "a": 255}}
+        ]
+    },
+    {
+        "title": "Barney",
+        "background": "linear-gradient(#AA076B, #61045F)",
+        "colorStops": [
+            {"force": 1.9, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 1.95, "color": {"r": 29, "g": 151, "b": 108, "a": 200}},
+            {"force": 3.2, "color": {"r": 147, "g": 249, "b": 185, "a": 255}}
+        ]
     }
 ]
