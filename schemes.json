@@ -99,5 +99,49 @@
             {"force": 3, "color": {"r": 30, "g": 30, "b": 30, "a": 150}},
             {"force": 1000, "color": {"r": 30, "g": 30, "b": 30, "a": 255}}
         ]
+    },
+    {
+        "title": "Ghosts",
+        "background": "#fff",
+        "colorStops": [
+            {"force": 1.89, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 2.2, "color": {"r": 0, "g": 0, "b": 0, "a": 150}},
+            {"force": 3, "color": {"r": 30, "g": 30, "b": 30, "a": 255}},
+            {"force": 3.2, "color": {"r": 30, "g": 30, "b": 255, "a": 255}},
+            {"force": 5, "color": {"r": 100, "g": 100, "b": 255, "a": 255}}
+        ]
+    },
+    {
+        "title": "Fungal Growth",
+        "background": "linear-gradient(#3D7EAA, #FFE47A)",
+        "colorStops": [
+            {"force": 0.05, "color": {"r": 0, "g": 0, "b": 0, "a": 0}},
+            {"force": 0.5, "color": {"r": 0, "g": 255, "b": 255, "a": 10}},
+            {"force": 1.0, "color": {"r": 0, "g": 220, "b": 200, "a": 20}},
+            {"force": 1.2, "color": {"r": 0, "g": 210, "b": 170, "a": 30}},
+            {"force": 2.5, "color": {"r": 0, "g": 191, "b": 143, "a": 100}},
+            {"force": 3, "color": {"r": 0, "g": 25, "b": 30, "a": 150}},
+            {"force": 4, "color": {"r": 0, "g": 25, "b": 30, "a": 200}},
+            {"force": 4.5, "color": {"r": 0, "g": 25, "b": 30, "a": 255}}
+        ]
+    },
+    {
+        "title": "Sriracha",
+        "background": "linear-gradient(#a73737, #7a2828)",
+        "colorStops": [
+            {"force": 1.9, "color": {"r": 255, "g": 255, "b": 255, "a": 0}},
+            {"force": 1.95, "color": {"r": 222, "g": 62, "b": 62, "a": 200}},
+            {"force": 3.5, "color": {"r": 200, "g": 40, "b": 40, "a": 255}}
+        ]
+    },
+    {
+        "title": "Pangea",
+        "background": "linear-gradient(#24C6DC, #514A9D)",
+        "colorStops": [
+            {"force": 1.9, "color": {"r": 10, "g": 200, "b": 255, "a": 0}},
+            {"force": 1.95, "color": {"r": 209, "g": 145, "b": 60, "a": 200}},
+            {"force": 3.5, "color": {"r": 255, "g": 209, "b": 148, "a": 255}},
+            {"force": 4, "color": {"r": 255, "g": 220, "b": 170, "a": 255}}
+        ]
     }
 ]
