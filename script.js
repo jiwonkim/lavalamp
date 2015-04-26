@@ -1,9 +1,13 @@
 $(document).ready(function() { var canvas = document.getElementById('lavalamp-canvas');
 
     // CONSTANTS
-    var colorStop0 = {r: 255, g: 0, b: 0, a: 255};
-    var colorStop1 = {r: 255, g: 150, b: 0, a: 200};
-
+    var SUM_MULTIPLIER = 200;
+    var colorStops = [
+        {force: 1.89, color: {r: 255, g: 150, b: 0, a: 0}},
+        {force: 1.9, color: {r: 255, g: 150, b: 0, a: 100}},
+        {force: 2, color: {r: 255, g: 150, b: 0, a: 200}},
+        {force: 3, color: {r: 255, g: 10, b: 0, a: 255}}
+    ];
 
     // SETUP CANVAS2D API, START RENDERING
     var context = canvas.getContext('2d');
@@ -46,16 +50,53 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
                 for (var bidx = 0; bidx < blobs.length; bidx++) {
                     sum += blobs[bidx].m(x, y);
                 }
+
                 var pixelIdx = (w * y + x) * 4;
-                var d0 = (0.015 - sum) * 200;
-                var d1 = 1 - d0;
-                imageData.data[pixelIdx] = d1 * colorStop1.r + d0 + colorStop0.r;
-                imageData.data[pixelIdx + 1] = d1 * colorStop1.g + d0 + colorStop0.g;
-                imageData.data[pixelIdx + 2] = d1 * colorStop1.b + d0 + colorStop0.b;
-                imageData.data[pixelIdx + 3] = d1 * colorStop1.a + d0 + colorStop0.a;
+                var force = sum * SUM_MULTIPLIER;
+                var rgba = colorAt(force);
+                imageData.data[pixelIdx] = rgba.r;
+                imageData.data[pixelIdx + 1] = rgba.g;
+                imageData.data[pixelIdx + 2] = rgba.b;
+                imageData.data[pixelIdx + 3] = rgba.a;
             }
         }
         context.putImageData(imageData, 0, 0);
+    }
+
+    function colorAt(force) {
+        for (var i = 0; i < colorStops.length; i++) {
+            if (force > colorStops[i].force) {
+                continue;
+            }
+
+            /**
+             * force <= colorstop. Interpolate color between
+             * colorStop[i - 1] and colorStop[i] and return
+             */
+
+            // force is smaller than the colorstop for the smallest force.    
+            // the color here should be transparent
+            if (i === 0) {
+                return {r: 0, g: 0, b: 0, a: 0};
+            }
+            
+            var cs0, cs1;
+            cs0 = colorStops[i - 1]; // colorstop with the smaller force
+            cs1 = colorStops[i]; // colorstop with the larger force
+
+            var t0, t1;
+            t0 = (force - cs0.force) / (cs1.force - cs0.force);
+            t1 = 1 - t0;
+
+            return {
+                r: t1 * cs0.color.r + t0 + cs1.color.r,
+                g: t1 * cs0.color.g + t0 + cs1.color.g,
+                b: t1 * cs0.color.b + t0 + cs1.color.b,
+                a: t1 * cs0.color.a + t0 + cs1.color.a
+            }
+        }
+
+        return colorStops[colorStops.length - 1].color;
     }
 
     function blob(x, r) {
