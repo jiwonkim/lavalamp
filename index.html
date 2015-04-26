@@ -3,12 +3,36 @@
     <script src="jquery-1.11.2.min.js"></script>
     <script src="script.js"></script>
     <style>
-        #hidden-canvas {
-            /*display: none;*/
+        body {
+            overflow: hidden;
+        }
+
+        #lavalamp-canvas {
+            height: 100%;
+            display: inline;
+            background-color: #333;
+        }
+        
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #glass-jar {
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <canvas id="lavalamp-canvas" width="300px" height="500px">
+    <div class="container">
+        <canvas id="lavalamp-canvas" width="300px" height="460px"></canvas>
+    </div>
+    <div class="container">
+        <img id="glass-jar" src="glassjar.png">
+    </div>
 </body>
 </html>

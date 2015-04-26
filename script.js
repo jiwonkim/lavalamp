@@ -12,24 +12,27 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
     // SETUP CANVAS2D API, START RENDERING
     var context = canvas.getContext('2d');
     context.translate(0.5, 0.5);
-    var hiddenCanvas = document.getElementById('hidden-canvas');
-    var hiddenContext = canvas.getContext('2d');
+
     var w = canvas.width;
     var h = canvas.height;
+    var vw = w;
+    var vh = h * 0.9;
+
     var imageData = context.createImageData(w, h);
-    requestAnimationFrame(frame);
 
     // LAVA LAMP STATE
     var blobs = [
-        blob(0.3, 0.1),
-        blob(0.6, 0.075),
-        blob(0.8, 0.05),
-        blob(0.7, 0.06),
         blob(0.2, 0.05),
-        blob(0.5, 0.12),
         blob(0.35, 0.04),
+        blob(0.3, 0.04),
+        blob(0.5, 0.1),
+        blob(0.6, 0.075),
+        blob(0.8, 0.03),
+        blob(0.7, 0.03),
+        blob(0.9, 0.09),
     ];
 
+    requestAnimationFrame(frame);
 
     function frame() {
         physics();
@@ -46,8 +49,8 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
     function render() {
         context.clearRect(0, 0, w, h);
 
-        for (var y = 0; y < h; y++) {
-            for (var x = 0; x < w; x++) {
+        for (var y = 0; y < vh; y++) {
+            for (var x = 0; x < vw; x++) {
                 var sum = 0;
                 for (var bidx = 0; bidx < blobs.length; bidx++) {
                     sum += blobs[bidx].m(x, y);
@@ -110,13 +113,10 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
             _r2 = r*r;
 
         // center of metaball, in pixel coords
-        var _px = Math.floor(_x * w + 0.5),
-            _py = Math.floor(_y * h + 0.5);
+        var _px = Math.floor(_x * vw + 0.5),
+            _py = Math.floor(_y * vh + 0.5);
 
-        // origin of the potential map of the metaball, in pixel coords
-        var _opx = _px - w,
-            _opy = _py - h; 
-        var _pr = _r * (w + h) / 2,
+        var _pr = _r * (vw + vh) / 2,
             _pr2 = _pr*_pr;
         var _mass = Math.PI * Math.pow(2 * _r, 3) * 3/4;
 
@@ -133,10 +133,8 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
             _y += _vy * dt;
 
             // update px, py, pr
-            _px = Math.floor(_x * w + 0.5);
-            _py = Math.floor(_y * h + 0.5);
-            _opx = _px - w;
-            _opy = _py - h;
+            _px = Math.floor(_x * vw + 0.5);
+            _py = Math.floor(_y * vh + 0.5);
         }
 
         /** The metaball equation */
