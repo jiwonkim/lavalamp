@@ -1,13 +1,29 @@
-$(document).ready(function() { var canvas = document.getElementById('lavalamp-canvas');
+$(document).ready(function() {
+    var canvas = document.getElementById('lavalamp-canvas');
 
     // CONSTANTS
     var SUM_MULTIPLIER = 200;
-    var colorStops = [
-        {force: 1.89, color: {r: 255, g: 150, b: 0, a: 0}},
-        {force: 1.9, color: {r: 255, g: 150, b: 0, a: 100}},
-        {force: 2, color: {r: 255, g: 150, b: 0, a: 200}},
-        {force: 3, color: {r: 255, g: 10, b: 0, a: 255}}
+    var colorStopsList = [
+        [
+            {force: 1.89, color: {r: 0, g: 0, b: 0, a: 0}},
+            {force: 1.9, color: {r: 255, g: 255, b: 0, a: 100}},
+            {force: 2, color: {r: 255, g: 180, b: 0, a: 200}},
+            {force: 3, color: {r: 255, g: 10, b: 0, a: 255}}
+        ],
+        [
+            {force: 1.89, color: {r: 0, g: 0, b: 0, a: 0}},
+            {force: 2, color: {r: 200, g: 0, b: 255, a: 200}},
+            {force: 3, color: {r: 200, g: 0, b: 255, a: 255}}
+        ],
+        [
+            {force: 1.89, color: {r: 0, g: 0, b: 0, a: 0}},
+            {force: 1.9, color: {r: 150, g: 50, b: 150, a: 100}},
+            {force: 2.3, color: {r: 200, g: 50, b: 200, a: 150}},
+            {force: 2.9, color: {r: 100, g: 150, b: 255, a: 200}},
+            {force: 3, color: {r: 0, g: 255, b: 255, a: 255}}
+        ]
     ];
+    var colorStopIdx = 0;
 
     // SETUP CANVAS2D API, START RENDERING
     var context = canvas.getContext('2d');
@@ -32,6 +48,9 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
         blob(0.9, 0.09),
     ];
 
+    $('body').click(function() {
+        colorStopIdx = (colorStopIdx + 1) % colorStopsList.length;
+    });
     requestAnimationFrame(frame);
 
     function frame() {
@@ -69,6 +88,7 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
     }
 
     function colorAt(force) {
+        var colorStops = colorStopsList[colorStopIdx];
         for (var i = 0; i < colorStops.length; i++) {
             if (force > colorStops[i].force) {
                 continue;
@@ -93,11 +113,28 @@ $(document).ready(function() { var canvas = document.getElementById('lavalamp-ca
             t0 = (force - cs0.force) / (cs1.force - cs0.force);
             t1 = 1 - t0;
 
+/*
+            console.log("force: ",force);
+            console.log("cs0: ");
+            console.log(cs0);
+            console.log("cs1: ");
+            console.log(cs1);
+            console.log("t0: ",t0);
+            console.log("t1: ",t1);
+            console.log("t1 * cs0.color.r: ", t1 * cs0.color.r);
+            console.log("t1 * cs0.color.g: ", t1 * cs0.color.g);
+            console.log("t1 * cs0.color.b: ", t1 * cs0.color.b);
+            console.log("t1 * cs0.color.a: ", t1 * cs0.color.a);
+            console.log("t0 * cs1.color.r: ", t0 * cs1.color.r);
+            console.log("t0 * cs1.color.g: ", t0 * cs1.color.g);
+            console.log("t0 * cs1.color.b: ", t0 * cs1.color.b);
+            console.log("t0 * cs1.color.a: ", t0 * cs1.color.a);
+*/
             return {
-                r: t1 * cs0.color.r + t0 + cs1.color.r,
-                g: t1 * cs0.color.g + t0 + cs1.color.g,
-                b: t1 * cs0.color.b + t0 + cs1.color.b,
-                a: t1 * cs0.color.a + t0 + cs1.color.a
+                r: t1 * cs0.color.r + t0 * cs1.color.r,
+                g: t1 * cs0.color.g + t0 * cs1.color.g,
+                b: t1 * cs0.color.b + t0 * cs1.color.b,
+                a: t1 * cs0.color.a + t0 * cs1.color.a
             }
         }
 
